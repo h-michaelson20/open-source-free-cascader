@@ -9,8 +9,8 @@ setup(
     install_requires=[
         "requests",
     ],
-    author="Your Name",
-    description="A library for cascading LLM API calls.",
+    author="Henry Michaelson and Yash Agrawal",
+    description="A library for free cascading LLM API calls.",
     url="https://github.com/yourusername/my_cascade_library",  # Update with your repository URL
     entry_points={
         'console_scripts': [
