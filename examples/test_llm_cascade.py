@@ -1,4 +1,4 @@
-from src.cascade import LLMCascade
+from free_apis_llm_cascade.cascade import LLMCascade
 import asyncio
 
 async def main():
