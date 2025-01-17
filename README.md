@@ -1,4 +1,4 @@
-# My LLM Cascade
+# Free API-based LLM Cascade Library
 
 A Python library for cascading LLM (Large Language Model) API calls, allowing you to leverage multiple providers for enhanced language processing capabilities.
 
@@ -24,10 +24,12 @@ pip install free_apis_llm_cascade
 Before using the library, you need to set up your API keys. Create a `.env` file in the root directory of your project and populate it with your API keys as follows:
 
 # .env
+```
 GROQ_API_KEY=your_groq_api_key_here
 GOOGLE_API_KEY=your_google_api_key_here
 SAMBANOVA_API_KEY=your_sambanova_api_key_here
 OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
 
 Make sure to replace the placeholder values with your actual API keys.
 
