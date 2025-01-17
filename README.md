@@ -23,7 +23,7 @@ pip install free_apis_llm_cascade
 
 Before using the library, you need to set up your API keys. Create a `.env` file in the root directory of your project and populate it with your API keys as follows:
 
-# .env
+.env
 ```
 GROQ_API_KEY=your_groq_api_key_here
 GOOGLE_API_KEY=your_google_api_key_here
