@@ -14,7 +14,7 @@ A Python library for cascading LLM (Large Language Model) API calls, allowing yo
 To install the library, you can use pip:
 
 ```python
-pip install free_apis_llm_cascade
+pip install free-apis-llm-cascade
 ```
 
 ### Environment Variables
@@ -36,7 +36,7 @@ Make sure to replace the placeholder values with your actual API keys.
 Here’s a quick example of how to use the `LLMCascade` class:
 
 ```python
-from my_llm_cascade.llm_cascade import LLMCascade
+from free_apis_llm_cascade.cascade import LLMCascade
 import asyncio
 
 async def main():
@@ -54,11 +54,6 @@ async def main():
 # Run the main function
 if name == "main":
     asyncio.run(main())
-``` 
-
-Then, you can run this with a command like:
-```
-python3 -m examples.test_csv_test_data
 ```
 
 The three functions that are usable in this library currently are:
