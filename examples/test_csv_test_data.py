@@ -23,11 +23,11 @@ async def main():
                         "content": f"Answer this in TWO SENTENCES OR LESS: {question}"
                    }]
         vendors = ["sambanova", "googleai", "groq", "groq"]
-        models = ["Meta-Llama-3.2-1B-Instruct", "gemini-1.0-flash", "llama3-8b-8192", "llama-3.3-70b-versatile"]
+        models = ["Meta-Llama-3.2-1B-Instruct", "gemini-1.5-flash-8b", "llama3-8b-8192", "llama-3.3-70b-versatile"]
         # CASCADE OF LLAMA 1B, 3B, 8B, 70B
-        #result, num_models_run = await asyncio.wait_for(llm_cascade.cascade_three_or_more_llm_basic_internal(vendors, models, messages, 0.7), timeout=12)
+        result, num_models_run = await asyncio.wait_for(llm_cascade.cascade_three_or_more_llm(vendors, models, messages, 0.7), timeout=12)
         # ONLY LLAMA 70B
-        result = await asyncio.wait_for(llm_cascade.get_single_model_result("groq", "llama-3.2-3b-preview", messages), timeout=12)
+        #result = await asyncio.wait_for(llm_cascade.get_single_model_result("groq", "llama-3.2-3b-preview", messages), timeout=12)
         await asyncio.sleep(2)
         results.append(result)
         print(f"Index {index} completed.")
