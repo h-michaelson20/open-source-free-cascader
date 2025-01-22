@@ -1,0 +1,22 @@
+[project]
+name = "Free API-based LLM Cascading"
+version = "0.1.0"
+description = "Your project description"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = "Henry Michaelson"}]
+license = {text = "MIT License"}
+classifiers = [
+    "License :: OSI Approved :: {{ MIT License }} "
+]
+dependencies = ["asyncio", "sklearn", "dotenv", "google.generativeai", "groq", "requests", "json", "openai"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/h-michaelson20/open-source-free-cascader/tree/main"
+
+[project.optional-dependencies]
+test = ["pytest", "mkdocs"]
