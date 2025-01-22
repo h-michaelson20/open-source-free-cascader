@@ -1,6 +1,6 @@
 [project]
 name = "free-apis-llm-cascade"
-version = "0.1.5"
+version = "0.1.6"
 description = "Free API-based LLM Cascading"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -28,3 +28,6 @@ Repository = "https://github.com/h-michaelson20/open-source-free-cascader.git"
 
 [project.optional-dependencies]
 test = ["pytest", "mkdocs"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
