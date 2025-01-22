@@ -74,4 +74,4 @@ This project is licensed under the MIT License - see the LICENSE.txt file for de
 
 ## Useful reference
 
-This [https://github.com/cheahjs/free-llm-api-resources/tree/main](GitHub repo stores) information about what free LLM APIs are available. We currently only support Groq, Google AI Studio, SambaNova, and OpenRouter, but may expand to others soon.
+This [GitHub repo](https://github.com/cheahjs/free-llm-api-resources/tree/main) stores information about what free LLM APIs are available. We currently only support Groq, Google AI Studio, SambaNova, and OpenRouter, but may expand to others soon.
