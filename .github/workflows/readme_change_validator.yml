@@ -4,7 +4,6 @@ on:
   pull_request:
     paths:
       - 'README.md'
-      - 'src/README_template.md'
       - 'src/cascade.py'  # Updated to use src/cascade.py
 
 permissions:
