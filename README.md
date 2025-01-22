@@ -46,10 +46,10 @@ async def main():
     llm_cascade = LLMCascade()
     # Prepare your messages, vendors, and models to test the cascade with as well as the cosine similarity threshold
     messages=[{ "role": "user", "content": "What is the capital of California?" }]
-    vendors = ["sambanova", "openrouter", "groq", "groq"]
-    models = ["Meta-Llama-3.2-1B-Instruct", "meta-llama/llama-3.2-3b-instruct:free", "llama3-8b-8192", "llama-3.3-70b-versatile"]
+    vendors = ["sambanova", "openrouter", "groq", "groq"] # these are the vendors for the models below
+    models = ["Meta-Llama-3.2-1B-Instruct", "meta-llama/llama-3.2-3b-instruct:free", "llama3-8b-8192", "llama-3.3-70b-versatile"] # these are the actual models that will be run
     # call the llm cascade function
-    output, num_models_run = await llm_cascade.cascade_three_or_more_llm_basic(vendors, models, messages, 0.7)
+    output, num_models_run = await llm_cascade.cascade_three_or_more_llm_basic(vendors, models, messages, 0.7) # cosine threshold = 0.7 here
     print(40*"-")
     print(f"Final result: {output}")
     print(f"Models run up to: {models[num_models_run-1]}")
@@ -64,9 +64,8 @@ Contributions are welcome! If you have suggestions for improvements or find bugs
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE.txt file for details.
 
-## Acknowledgments
+## Useful reference
 
-- Thanks to the developers of the LLM providers for their APIs.
-- Thanks to the open-source community for their contributions and support.
+This [https://github.com/cheahjs/free-llm-api-resources/tree/main](GitHub repo stores) information about what free LLM APIs are available. We currently only support Groq, Google AI Studio, SambaNova, and OpenRouter, but may expand to others soon.

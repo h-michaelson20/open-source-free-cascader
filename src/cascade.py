@@ -153,7 +153,7 @@ class LLMCascade:
         return cos_sim
     
 
-    async def cascade_three_or_more_llm_basic(self, vendors, models, input, cos_sim_threshold):
+    async def cascade_three_or_more_llm_basic_internal(self, vendors, models, input, cos_sim_threshold):
         if len(vendors) != len(models) or len(vendors) <= 2:
             raise Exception("Vendors and models are different sizes and/or less than 3")
         
@@ -185,5 +185,10 @@ class LLMCascade:
                     return result, i+1
             
         return results[len(results)-1], len(results)
+    
+    #async def cascade_three_or_more_llm_basic(self, models, input, cos_sim_threshold=0.75):
+    #    for model in models:
+            
+    #    self.cascade_three_or_more_llm_basic_internal(vendors, models, input, cos_sim_threshold)
             
     
