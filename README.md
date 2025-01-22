@@ -17,8 +17,6 @@ To install the library, you can use pip:
 pip install free_apis_llm_cascade
 ```
 
-## Setup
-
 ### Environment Variables
 
 Before using the library, you need to set up your API keys. Create a `.env` file in the root directory of your project and populate it with your API keys as follows:
