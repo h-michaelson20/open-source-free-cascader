@@ -47,7 +47,7 @@ async def main():
     vendors = ["sambanova", "openrouter", "groq", "groq"] # these are the vendors for the models below
     models = ["Meta-Llama-3.2-1B-Instruct", "meta-llama/llama-3.2-3b-instruct:free", "llama3-8b-8192", "llama-3.3-70b-versatile"] # these are the actual models that will be run
     # call the llm cascade function
-    output, num_models_run = await llm_cascade.cascade_three_or_more_llm_basic(vendors, models, messages, 0.7) # cosine threshold = 0.7 here
+    output, num_models_run = await llm_cascade.cascade_three_or_more_llm(vendors, models, messages, 0.7) # cosine threshold = 0.7 here
     print(40*"-")
     print(f"Final result: {output}")
     print(f"Models run up to: {models[num_models_run-1]}")
@@ -55,6 +55,14 @@ async def main():
 if name == "main":
     asyncio.run(main())
 ``` 
+
+The three functions that are usable in this library currently are:
+```
+get_single_model_result(self, vendor, model, messages)
+cosine_sim_two_llm_basic(self, vendors, models, input)
+cascade_three_or_more_llm(self, vendors, models, input, cos_sim_threshold)
+```
+
 
 ## Contributing
 

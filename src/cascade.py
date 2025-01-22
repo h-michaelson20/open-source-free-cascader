@@ -49,30 +49,8 @@ class LLMCascade:
         # Default order - can be changed later
         self.provider_order = self.available_providers.copy()
         print(self.available_providers)
-
-    async def create(self,
-                    vendor: str,
-                    model: str,
-                    messages: List[Dict[str, str]],
-                    max_tokens: Optional[int] = None,
-                    temperature: Optional[float] = 1.0,
-                    top_p: Optional[float] = 1.0,
-                    n: Optional[int] = 1,
-                    stream: Optional[bool] = False,
-                    stop: Optional[Union[str, List[str]]] = None,
-                    presence_penalty: Optional[float] = 0,
-                    frequency_penalty: Optional[float] = 0,
-                    **kwargs) -> Dict:
-        """
-        OpenAI-compatible interface for generating completions.
-        Falls back through providers while maintaining the same interface.
-        """
-        print('here')
-        last_error = None
-
-        raise Exception(f"Complete failure - contact developers for help.")
     
-    async def run_test(self, vendor, model, messages):
+    async def get_single_model_result(self, vendor, model, messages):
         # may have to edit the role/system/user whatever and json strucutre to pass in correctly
         try:
             # Create the Groq provider instance
@@ -153,7 +131,7 @@ class LLMCascade:
         return cos_sim
     
 
-    async def cascade_three_or_more_llm_basic_internal(self, vendors, models, input, cos_sim_threshold):
+    async def cascade_three_or_more_llm(self, vendors, models, input, cos_sim_threshold):
         if len(vendors) != len(models) or len(vendors) <= 2:
             raise Exception("Vendors and models are different sizes and/or less than 3")
         
