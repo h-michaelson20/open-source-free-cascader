@@ -56,6 +56,11 @@ if name == "main":
     asyncio.run(main())
 ``` 
 
+Then, you can run this with a command like:
+```
+python3 -m examples.test_csv_test_data
+```
+
 The three functions that are usable in this library currently are:
 ```
 get_single_model_result(self, vendor, model, messages)

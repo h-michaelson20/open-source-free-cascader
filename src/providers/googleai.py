@@ -20,7 +20,14 @@ class GoogleaiProvider:
                         presence_penalty: Optional[float] = 0,
                         frequency_penalty: Optional[float] = 0,
                         **kwargs) -> Dict:
+        
+        # assuming the messages are passed in like this format:
+        # messages = [{
+        #                 "role": "user",
+        #                 "content": f"Answer this in TWO SENTENCES OR LESS: {question}"
+        #            }]
 
+        message = messages[0]["content"]
         model = genai.GenerativeModel(model)
-        response = model.generate_content(messages) # likely needs editing
+        response = model.generate_content(message) # likely needs editing
         return response.text
