@@ -51,7 +51,6 @@ class LLMCascade:
         print(49*"*")
         print("* LLMCascade instance successfully initialized. *")
         print(49*"*")
-        print("\n")
     
     async def get_single_model_result(self, vendor, model, messages):
         # may have to edit the role/system/user whatever and json strucutre to pass in correctly
