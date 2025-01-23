@@ -48,7 +48,10 @@ class LLMCascade:
             
         # Default order - can be changed later
         self.provider_order = self.available_providers.copy()
-        print(self.available_providers)
+        print(49*"*")
+        print("* LLMCascade instance successfully initialized. *")
+        print(49*"*")
+        print("\n")
     
     async def get_single_model_result(self, vendor, model, messages):
         # may have to edit the role/system/user whatever and json strucutre to pass in correctly
