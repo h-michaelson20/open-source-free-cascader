@@ -1,0 +1,45 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+
+from src.free_apis_llm_cascade.orchestrator import LLMOrchestrator
+import asyncio
+import re
+
+async def main():
+    # Create an instance of LLMCascade
+    llm_orchestrator = LLMOrchestrator()
+    print('hi')
+
+    # this is the orchestration basic idea
+    vendors = ["sambanova", "openrouter", "groq", "groq", "googleai"]
+    models = ["Meta-Llama-3.2-1B-Instruct", "meta-llama/llama-3.2-3b-instruct:free", "llama3-8b-8192", "llama-3.3-70b-versatile", "gemini-1.5-flash"]
+    
+
+    questions = [
+        "What is 2 + 2?",  # Super easy question
+        "Discuss the implications of the P vs NP problem on modern cryptography and computational theory."  # Much harder question
+    ]
+
+    for prompt in questions:
+        #prompt = "How do nuclear reactors generate electricity?"
+        index_result = await llm_orchestrator.orchestrator_internal("groq", "llama3-8b-8192", models, prompt)
+
+        numbers = re.findall(r'\d+', index_result)
+        #print(numbers)
+        model_index = int(numbers[0])
+        print(f"{model_index}")
+
+
+    #messages = [{
+    #                "role": "user",
+    #                "content": prompt
+    #           }]
+    #full_answer = await llm_orchestrator.get_single_model_result(vendors[model_index-1], models[model_index-1], messages)
+    #print(full_answer)
+
+
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
