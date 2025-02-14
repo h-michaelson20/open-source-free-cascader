@@ -27,7 +27,8 @@ async def main():
 
         numbers = re.findall(r'\d+', index_result)
         #print(numbers)
-        model_index = int(numbers[0])
+        # MAX ORCHESTRATION SIZE IS 10
+        model_index = int(numbers[0]) // 2
         print(f"{model_index}")
 
 

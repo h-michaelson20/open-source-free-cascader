@@ -86,12 +86,17 @@ class LLMOrchestrator:
 
                                 User Prompt: {user_prompt}
 
-                                Rating Scale:
-                                - 1: Very simple, factual question with a clear, straightforward answer.
-                                - 2: Basic question that requires general knowledge or reasoning.
-                                - 3: Question that requires explanation or intermediate-level understanding.
-                                - 4: Complex question involving technical or specialized knowledge.
-                                - 5: Highly complex, requiring in-depth analysis or a nuanced answer.
+                               Rating Scale:
+                                - 1: Very simple, factual question with an obvious answer.
+                                - 2: Basic question that requires general knowledge or a small amount of reasoning.
+                                - 3: Straightforward explanation needed, but still relatively simple.
+                                - 4: Intermediate-level understanding required, with some explanation.
+                                - 5: More detailed reasoning or explanation required, but not highly specialized.
+                                - 6: Complex question requiring technical or specialized knowledge.
+                                - 7: Highly detailed or specialized knowledge needed, possibly requiring multiple perspectives.
+                                - 8: Very complex, requiring in-depth analysis or a nuanced answer.
+                                - 9: Extremely difficult, requiring expert-level understanding and synthesis of multiple concepts.
+                                - 10: Exceptionally challenging, requiring deep expertise, original thought, or cutting-edge research.
 
                                 Examples:
 
@@ -102,15 +107,15 @@ class LLMOrchestrator:
                                 Rating: 2
 
                                 3. User Prompt: "How does photosynthesis work?"  
-                                Rating: 3
-
-                                4. User Prompt: "Can you explain quantum entanglement?"  
                                 Rating: 4
 
-                                5. User Prompt: "What are the social, economic, and political effects of the Industrial Revolution?"  
-                                Rating: 5
+                                4. User Prompt: "Can you explain quantum entanglement?"  
+                                Rating: 6
 
-                                Just provide the rating (1-5) — nothing else."""
+                                5. User Prompt: "What are the social, economic, and political effects of the Industrial Revolution?"  
+                                Rating: 8
+
+                                Just provide the rating (1-10) — nothing else."""
 
         #print(orchestrator_prompt)
         
